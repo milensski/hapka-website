@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Хапка - Безалкохолни Напитки</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        main {
+            position: relative;
+            min-height: calc(100vh - 100px);
+            /* You can add a background image if you want */
+        }
+        h1 {
+            text-align: center;
+            font-size: 3.5rem; /* increased font size */
+            font-weight: 700;
+            color: #ffde00; /* yellow */
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 2.2rem; /* increased */
+            border-bottom: 2px solid #ffde00;
+            padding-bottom: 6px;
+            margin-bottom: 20px;
+            color: #ffde00;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0; /* increased padding */
+            border-bottom: 1px dotted #ffde00;
+            font-size: 1.5rem; /* increased font size */
+            color: #ffde00;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .description {
+            flex: 1;
+            padding-right: 15px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 600;
+        }
+        .volume {
+            width: 90px; /* wider for bigger text */
+            text-align: center;
+            font-weight: 700;
+            color: #ffd633;
+            font-size: 1.5rem;
+        }
+        .price {
+            width: 230px;
+            text-align: right;
+            font-weight: 700;
+            white-space: nowrap;
+            font-size: 1.5rem;
+        }
+        /* Special multiline items */
+        .multi-line {
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ресторант Хапка</h1>
+    <nav>
+        <a href="index.html">НАЧАЛО</a>
+        <a href="salati.html">САЛАТИ</a>
+        <a href="zakuski.html">ЗАКУСКИ</a>
+        <a href="raziadki.html">ДОМАШНИ РАЗЯДКИ</a>
+        <a href="pasta.html">ПАСТА И РИЗОТО</a>
+        <a href="barbekyu.html">ОСНОВНИ</a>
+        <a href="parlenki.html">ПЪРЛЕНКИ И БУРГЕРИ</a>
+        <a href="riba.html">РИБА</a>
+        <a href="vino.html">ВИНО</a>
+        <a href="bira.html">БИРА И АЛКОХОЛ</a>
+        <a href="bezalkoholni.html">БЕЗАЛКОХОЛНИ НАПИТКИ</a>
+        <a href="deserti.html">ДЕСЕРТИ</a>
+    </nav>
+</header>
+
+<h1>БЕЗАЛКОХОЛНИ НАПИТКИ</h1>
+
+<section>
+    <div class="menu-item multi-line">
+        <div class="description">Безалкохолна напитка (COCA – COLA, FANTA, TONIC, SPRITE)</div>
+        <div class="volume">250мл.</div>
+        <div class="price">1.84 € / 3.60лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Газирана вода</div>
+        <div class="volume">250мл.</div>
+        <div class="price">1.63 € / 3.20лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Студен чай</div>
+        <div class="volume">400мл.</div>
+        <div class="price">3.01 € / 5.90лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Газирана вода кана</div>
+        <div class="volume">1.000мл.</div>
+        <div class="price">3.52 € / 6.90лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Red bull</div>
+        <div class="volume">250мл.</div>
+        <div class="price">3.57 € / 7.00лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Натурален сок Cappy</div>
+        <div class="volume">250мл.</div>
+        <div class="price">1.84 € / 3.60лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Минерална вода Банкя</div>
+        <div class="volume">330мл.</div>
+        <div class="price">1.63 € / 3.20лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Минерална вода Банкя</div>
+        <div class="volume">1.000мл.</div>
+        <div class="price">3.52 € / 6.90лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Кана вода</div>
+        <div class="volume">1.000мл.</div>
+        <div class="price">3.01 € / 5.90лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Фрапе бяло</div>
+        <div class="volume">150мл.</div>
+        <div class="price">2.55 € / 5.00лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Фрапе черно</div>
+        <div class="volume">150мл.</div>
+        <div class="price">2.30 € / 4.50лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Айрян</div>
+        <div class="volume">200мл.</div>
+        <div class="price">1.48 € / 2.90лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Айрян</div>
+        <div class="volume">500мл.</div>
+        <div class="price">3.01 € / 5.90лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Домашна лимонада</div>
+        <div class="volume">400мл.</div>
+        <div class="price">3.01 € / 5.90лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Фреш</div>
+        <div class="volume">200мл.</div>
+        <div class="price">4.09 € / 8.00лв.</div>
+    </div>
+</section>
+
+<section>
+    <h2>ТОПЛИ НАПИТКИ</h2>
+    <div class="menu-item">
+        <div class="description">Кафе</div>
+        <div class="volume">60мл.</div>
+        <div class="price">1.53 € / 3.00лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Кафе лешник</div>
+        <div class="volume">60мл.</div>
+        <div class="price">2.30 € / 4.50лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Капучино</div>
+        <div class="volume">150мл.</div>
+        <div class="price">2.30 € / 4.50лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Капучино лешник</div>
+        <div class="volume">150мл.</div>
+        <div class="price">2.81 € / 5.50лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Мляко с нес кафе</div>
+        <div class="volume">150мл.</div>
+        <div class="price">2.30 € / 4.50лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">3 в 1</div>
+        <div class="volume">100мл.</div>
+        <div class="price">1.53 € / 3.00лв.</div>
+    </div>
+    <div class="menu-item">
+        <div class="description">Чай</div>
+        <div class="volume">150мл.</div>
+        <div class="price">1.27 € / 2.50лв.</div>
+    </div>
+</section>
+
+</body>
+</html>
