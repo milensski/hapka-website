@@ -3,12 +3,13 @@
 This repository contains the static website for **Hapka** restaurant, built with plain HTML, CSS, and images, and configured to be served via Docker using an Nginx web server.
 
 ## Project Structure
-
+```
 ├── assets/ # Images and media files (e.g., logos, menu pictures)
 ├── public/ # HTML pages and CSS folder
 │ └── css/
 │ └── style.css
 ├── Dockerfile # Dockerfile to build the nginx container serving the website
+```
 
 ## How to run locally with Docker
 
