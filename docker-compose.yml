@@ -1,0 +1,8 @@
+version: '3'
+services:
+  web:
+    image: hapka-website
+    build: .
+    ports:
+      - "443:80"
+    container_name: nginx
