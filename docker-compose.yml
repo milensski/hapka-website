@@ -2,14 +2,12 @@ version: "3.8"
 
 services:
   hapka-nginx:
-    image: nginx:alpine
+    build: .
     container_name: hapka
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      # SSL certificates (from certbot)
       - /etc/letsencrypt/live/hapka.mplx.online/fullchain.pem:/etc/nginx/ssl/fullchain.pem:ro
       - /etc/letsencrypt/live/hapka.mplx.online/privkey.pem:/etc/nginx/ssl/privkey.pem:ro
-
     restart: unless-stopped
