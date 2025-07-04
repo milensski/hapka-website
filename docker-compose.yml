@@ -1,8 +1,22 @@
-version: '3'
+version: "3.8"
+
 services:
-  web:
-    image: hapka-website
-    build: .
+  hapka-nginx:
+    image: nginx:alpine
+    container_name: hapka
     ports:
       - "80:80"
-    container_name: nginx
+      - "443:443"
+    volumes:
+      # Static site content
+      - ./public:/usr/share/nginx/html:ro
+      - ./assets:/usr/share/nginx/html/assets:ro
+
+      # Nginx config
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+
+      # SSL certificates (from certbot)
+      - /etc/letsencrypt/live/hapka.mplx.online/fullchain.pem:/etc/nginx/ssl/fullchain.pem:ro
+      - /etc/letsencrypt/live/hapka.mplx.online/privkey.pem:/etc/nginx/ssl/privkey.pem:ro
+
+    restart: unless-stopped
