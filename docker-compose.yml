@@ -1,13 +1,52 @@
 version: "3.8"
 
 services:
-  hapka-nginx:
-    build: .
-    container_name: hapka
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    restart: unless-stopped
     ports:
       - "80:80"
-      - "443:443"
     volumes:
-      - /etc/letsencrypt/live/hapka.mplx.online/fullchain.pem:/etc/nginx/ssl/fullchain.pem:ro
-      - /etc/letsencrypt/live/hapka.mplx.online/privkey.pem:/etc/nginx/ssl/privkey.pem:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  hapka:
+    build:
+      context: .
+    container_name: hapka
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=hapka.localhost
+
+  marea-db:
+    image: mariadb
+    container_name: marea-db
     restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: example_root_password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpressuser
+      MYSQL_PASSWORD: wordpresspassword
+    volumes:
+      - marea-db-data:/var/lib/mysql
+
+  marea:
+    image: wordpress:latest
+    container_name: marea
+    depends_on:
+      - marea-db
+    expose:
+      - "80"
+    environment:
+      WORDPRESS_DB_HOST: marea-db:3306
+      WORDPRESS_DB_USER: wordpressuser
+      WORDPRESS_DB_PASSWORD: wordpresspassword
+      WORDPRESS_DB_NAME: wordpress
+      VIRTUAL_HOST: marea.localhost
+    volumes:
+      - marea-data:/var/www/html
+
+volumes:
+  marea-db-data:
+  marea-data:
